@@ -21,3 +21,6 @@ libmpfun90.a: libmpfun90.a($(MPFUN))
 .f90.a:
 	$(FC) $(FFLAGS) -c $<
 	$(AR) $(ARFLAGS) $@ $*.o
+
+clean:
+	rm -f *.a *.o *.mod
