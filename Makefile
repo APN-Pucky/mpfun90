@@ -4,7 +4,7 @@ dynamic: lib
 	$(AR) -x libmpfun90.a
 	$(CXX) $(LDFLAGS) -shared -Wl,--as-needed -Wl,-soname,mpfun90.so *.o -o libmpfun90.so
 
-	
+
 lib: libmpfun90.a
 
 
@@ -23,4 +23,4 @@ libmpfun90.a: libmpfun90.a($(MPFUN))
 	$(AR) $(ARFLAGS) $@ $*.o
 
 clean:
-	rm -f *.a *.o *.mod
+	rm -f *.a *.so *.o *.mod
