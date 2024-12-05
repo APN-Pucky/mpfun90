@@ -2,7 +2,7 @@ default: lib
 static: lib
 dynamic: lib
 	$(AR) -x libmpfun90.a
-	$(CXX) -shared *.o -o libmpfun90.so
+	$(CXX) -shared -Wl,--as-needed -Wl,-soname,mpfun90.so.0 *.o -o libmpfun90.so
 
 	
 lib: libmpfun90.a
