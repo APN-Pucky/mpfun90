@@ -2,14 +2,14 @@ default: lib
 static: lib
 dynamic: lib
 	$(AR) -x libmpfun90.a
-	$(CXX) -shared -Wl,--as-needed -Wl,-soname,mpfun90.so.0 *.o -o libmpfun90.so
+	$(CXX) $(LDFLAGS) -shared -Wl,--as-needed -Wl,-soname,mpfun90.so.0 *.o -o libmpfun90.so
 
 	
 lib: libmpfun90.a
 
 
 FC = gfortran
-FFLAGS = -fno-automatic -O2 -funroll-all-loops -std=legacy -fPIC
+FFLAGS = -fPIC $(FFLAGS)
 
 
 MPFUN = mpfun90.o mpmod90.o mpmodm90.o mpmodx90.o
