@@ -9,7 +9,7 @@ lib: libmpfun90.a
 
 
 FC = gfortran
-FFLAGS := -fPIC $(FFLAGS)
+FFLAGS += -fPIC
 
 
 MPFUN = mpfun90.o mpmod90.o mpmodm90.o mpmodx90.o
