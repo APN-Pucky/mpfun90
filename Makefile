@@ -2,7 +2,7 @@ default: lib
 static: lib
 dynamic: lib
 	$(AR) -x libmpfun90.a
-	$(FC) -shared -Wl,-soname,libmpfun90.so *.o $(LDFLAGS) -o libmpfun90.so
+	$(FC) $(FFLAGS) -shared -Wl,-soname,libmpfun90.so *.o $(LDFLAGS) -o libmpfun90.so
 
 
 lib: libmpfun90.a
